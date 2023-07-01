@@ -31,9 +31,11 @@ const checkWinner = function () {
     }
 
     if (elements[0] === elements[1] && elements[0] === elements[2]) {
-      modalEl.classList.remove('hide');
-      messageEl.textContent = `👏 '${elements[0]}' wins`;
-      return;
+      if (elements[0] !== '' && elements[1] !== '' && elements[2] !== '') {
+        modalEl.classList.remove('hide');
+        messageEl.textContent = `👏 '${elements[0]}' wins`;
+        return;
+      }
     }
   }
   if (activeButtons.length === 9) {
